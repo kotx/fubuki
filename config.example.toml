@@ -1,8 +1,11 @@
+# The Discord bot account token
 token = ""
+
+# Optional. Default is 50. The number of posts to fetch (per trigger). Values over 75 may lag the bot.
 post_fetch_count = 50
 
 [[feeds]]
-# Required. The title of the embed, and the fallback trigger.`
+# Required. The title of the embed, and the fallback trigger.
 title = "フブキ!"
 # Required. The subreddit to search through images.
 subreddit = "ShirakamiFubuki"
