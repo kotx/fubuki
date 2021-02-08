@@ -1,7 +1,7 @@
 token = ""
 post_fetch_count = 50
 
-[[subreddits]]
+[[feeds]]
 # Required. The title of the embed, and the fallback trigger.`
 title = "フブキ!"
 # Required. The subreddit to search through images.
@@ -11,7 +11,7 @@ color = 0xFFFFFF
 # Optional. If blank, it uses the title.
 trigger = "ふ"
 
-[[subreddits]]
+[[feeds]]
 title = "おかゆ!"
 subreddit = "Okayu"
 trigger = "もぐもぐ"

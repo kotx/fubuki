@@ -28,7 +28,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
     let client = Client::new(&config.token);
 
-    let triggers = config.subreddits.iter()
+    let triggers = config.feeds.iter()
         .map(|x| {
             x.get_trigger()
         }).collect::<Vec<_>>();
@@ -36,12 +36,12 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     while let Some(event) = events.next().await {
         match event {
             Event::MessageCreate(msg) if triggers.iter().any(|x| **x != "" && **x == msg.content) => {
-                let group = config.subreddits.iter()
+                let feed = config.feeds.iter()
                     .filter(|x| {
                         x.get_trigger() == msg.content.as_str()
                     }).next().unwrap();
 
-                let reddit_client = Subreddit::new(&group.subreddit.as_str());
+                let reddit_client = Subreddit::new(&feed.subreddit.as_str());
 
                 let mut latest = reddit_client
                     .latest(config.post_fetch_count, None).await?.data.children;
@@ -63,9 +63,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
                     Some(post) => &post.data,
                     None => {
                         let embed = EmbedBuilder::new()
-                            .title(&group.title)?
+                            .title(&feed.title)?
                             .color(0xFF_00_00)?
-                            .description(format!("Sorry, I couldn't find an image of {}", &group.title))?
+                            .description(format!("Sorry, I couldn't find an image of {}", &feed.title))?
                             .build()?;
 
                         client.create_message(msg.channel_id)
@@ -79,7 +79,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
                 let image_url = post.url.as_ref().unwrap();
 
                 let embed = EmbedBuilder::new()
-                    .title(group.title.as_str())?
+                    .title(feed.title.as_str())?
                     .color(0xff_ff_fe)?
                     .image(ImageSource::url(image_url)?)
                     .description(format!("[Sauce](https://reddit.com{})", post.permalink.as_str()))?
