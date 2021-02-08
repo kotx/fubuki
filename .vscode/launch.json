@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'fubuki'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=fubuki",
+                    "--package=fubuki"
+                ],
+                "filter": {
+                    "name": "fubuki",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'fubuki'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=fubuki",
+                    "--package=fubuki"
+                ],
+                "filter": {
+                    "name": "fubuki",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
