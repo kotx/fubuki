@@ -1394,11 +1394,11 @@ dependencies = [
 
 [[package]]
 name = "twilight-embed-builder"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "31b53c7675061a6d41ff8ee0f431f44103b10cce6a20f4f54b14b37d4f1c2d8a"
+checksum = "537d870939d6a0187b5c9c21ccdfaa2a163f284281c1786cf487d7ec60a177d9"
 dependencies = [
- "twilight-model 0.3.2",
+ "twilight-model 0.4.0",
 ]
 
 [[package]]
