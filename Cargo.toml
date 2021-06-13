@@ -16,7 +16,7 @@ toml = "^0.5"
 twilight-model = "^0.4"
 twilight-http = "^0.4"
 twilight-gateway = "^0.4"
-twilight-embed-builder = "^0.4"
+twilight-embed-builder = "^0.5"
 
 roux = "^1.3"
 rand = "^0.8"
