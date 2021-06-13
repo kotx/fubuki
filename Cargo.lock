@@ -201,7 +201,7 @@ dependencies = [
  "twilight-embed-builder",
  "twilight-gateway",
  "twilight-http",
- "twilight-model",
+ "twilight-model 0.4.0",
 ]
 
 [[package]]
@@ -1348,11 +1348,11 @@ dependencies = [
 
 [[package]]
 name = "twilight-embed-builder"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "537d870939d6a0187b5c9c21ccdfaa2a163f284281c1786cf487d7ec60a177d9"
+checksum = "1d2f8d545a49f70f4d1809816c8544bb693781f67b97fa3d5fefd6deeac2c968"
 dependencies = [
- "twilight-model",
+ "twilight-model 0.5.0",
 ]
 
 [[package]]
@@ -1373,7 +1373,7 @@ dependencies = [
  "tracing",
  "twilight-gateway-queue",
  "twilight-http",
- "twilight-model",
+ "twilight-model 0.4.0",
  "url",
 ]
 
@@ -1405,7 +1405,7 @@ dependencies = [
  "serde_repr",
  "tokio",
  "tracing",
- "twilight-model",
+ "twilight-model 0.4.0",
 ]
 
 [[package]]
@@ -1413,6 +1413,19 @@ name = "twilight-model"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b54ca8e1e6e38c043fa9d92c06eea5395a81b477054d08f8a210fa4cd104663b"
+dependencies = [
+ "bitflags",
+ "serde",
+ "serde-value",
+ "serde_repr",
+ "tracing",
+]
+
+[[package]]
+name = "twilight-model"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2492e1842faceec7c84d25469382a3bc80104884a1637f4e5cb818fda7fbd6e8"
 dependencies = [
  "bitflags",
  "serde",
