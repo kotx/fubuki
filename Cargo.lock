@@ -200,8 +200,8 @@ dependencies = [
  "toml",
  "twilight-embed-builder",
  "twilight-gateway",
- "twilight-http",
- "twilight-model",
+ "twilight-http 0.5.0",
+ "twilight-model 0.4.0",
 ]
 
 [[package]]
@@ -1352,7 +1352,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "537d870939d6a0187b5c9c21ccdfaa2a163f284281c1786cf487d7ec60a177d9"
 dependencies = [
- "twilight-model",
+ "twilight-model 0.4.0",
 ]
 
 [[package]]
@@ -1372,8 +1372,8 @@ dependencies = [
  "tokio-tungstenite",
  "tracing",
  "twilight-gateway-queue",
- "twilight-http",
- "twilight-model",
+ "twilight-http 0.4.1",
+ "twilight-model 0.4.0",
  "url",
 ]
 
@@ -1385,14 +1385,14 @@ checksum = "ca32c7b1a803cd295ceaeea9ad14a330775aaa87e087439f8ded1bee2945e120"
 dependencies = [
  "tokio",
  "tracing",
- "twilight-http",
+ "twilight-http 0.4.1",
 ]
 
 [[package]]
 name = "twilight-http"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7382ad748a84bc440940da48d9f850bfb26872cce0b0d7c7a3a18e82a581cd56"
+checksum = "bbe724aa4c3205d9f8c4719c4674c4a92120a6642feb57e7de368e62c24bb488"
 dependencies = [
  "bytes",
  "futures-util",
@@ -1405,7 +1405,23 @@ dependencies = [
  "serde_repr",
  "tokio",
  "tracing",
- "twilight-model",
+ "twilight-model 0.4.0",
+]
+
+[[package]]
+name = "twilight-http"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cbf82e562cd78153bc5b9415784e6ef05a843dda23ff2ae9e7a62381765c283a"
+dependencies = [
+ "hyper",
+ "hyper-rustls",
+ "percent-encoding",
+ "rand",
+ "serde",
+ "serde_json",
+ "tokio",
+ "twilight-model 0.5.0",
 ]
 
 [[package]]
@@ -1413,6 +1429,19 @@ name = "twilight-model"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b54ca8e1e6e38c043fa9d92c06eea5395a81b477054d08f8a210fa4cd104663b"
+dependencies = [
+ "bitflags",
+ "serde",
+ "serde-value",
+ "serde_repr",
+ "tracing",
+]
+
+[[package]]
+name = "twilight-model"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2492e1842faceec7c84d25469382a3bc80104884a1637f4e5cb818fda7fbd6e8"
 dependencies = [
  "bitflags",
  "serde",
